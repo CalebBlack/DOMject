@@ -4,12 +4,14 @@ const arraySize = require('./functions/arraysize');
 
 const DOMjectProxy = {
   get:(target,name)=>{
-    if (name === 'raw') return target;
-    if (name === 'render') return ()=>render(target);
-    if (name === 'innerHTML') return target.innerHTML;
-    if (name === 'parent' && parent instanceof HTMLElement) return parent;
-    if (name === 'size') return arraySize(target);
-    return createDOMject(target[name]);
+    switch(name) {
+      case('raw'): return target;
+      case('render'): return ()=>render(target);
+      case('innerHTML'): return target.innerHTML;
+      case('parent'): return target.parent instanceof HTMLElement ? target.parent : createDOMject(target.parent);
+      case('size'): return arraySize(target);
+      default: return createDOMject(target[name]);
+    }
   }
   set:(target,name,HTML)=>{
     target[name] = parse(HTML);
