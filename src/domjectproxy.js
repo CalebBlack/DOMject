@@ -7,7 +7,7 @@ const DOMjectProxy = {
     switch(name) {
       case('raw'): return target;
       case('render'): return ()=>render(target);
-      case('innerHTML'): return target.innerHTML;
+      //case('innerHTML'): return target.innerHTML;
       case('parent'): return target.parent instanceof HTMLElement ? target.parent : createDOMject(target.parent);
       case('size'): return arraySize(target);
       default: return createDOMject(target[name]);
