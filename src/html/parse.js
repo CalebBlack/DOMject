@@ -1,6 +1,6 @@
 const DOMject = require('./domject');
 const validate = require('./validate');
-const parseHTLM = require('./parsehtml');
+const parseHTML = require('./parsehtml');
 
 function parse(str,parent){
   if (typeof str != 'string') throw new Error('DOMject: Could Not Parse, HTML not string.');
