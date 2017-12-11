@@ -9,7 +9,7 @@ const DOMjectProxy = {
     if (name === 'parent' && parent instanceof HTMLElement) return parent;
     if (name === 'size') {
       var output = 0;
-      target.forEach(element=>{if (element) output++});
+      target.forEach(element=>{if (element !== undefined && element !== null) output++});
       return output;
     }
     return createDOMject(target[name]);
