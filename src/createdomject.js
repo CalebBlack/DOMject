@@ -1,4 +1,4 @@
-const parse = require('./parse');
+const parse = require('./html/parse');
 const DOMject = require('./domject');
 const DOMjectProxy = require('./domjectproxy');
 
