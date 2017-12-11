@@ -2,10 +2,10 @@ const render = require('./render');
 const parse = require('./parse');
 const arraySize = require('./functions/arraysize');
 
-const DOMjectProxy =
+
 function createDOMjectProxy(){
   var result = null;
-  var object = {
+  var proxy = {
     get:(target,name)=>{
       switch(name) {
         case('raw'): return target;
@@ -22,6 +22,6 @@ function createDOMjectProxy(){
       return true;
     }
   }
-  return [object,value=>{result=value}];
+  return [proxy,value=>{result=value}];
 }
 module.exports = createDOMjectProxy;
