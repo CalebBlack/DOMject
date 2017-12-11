@@ -1,5 +1,5 @@
 const render = require('./render');
-const parse = require('./parse');
+const parse = require('./html/parse');
 const arraySize = require('./functions/arraysize');
 
 

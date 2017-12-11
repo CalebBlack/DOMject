@@ -1,5 +1,4 @@
-const DOMject = require('./domject');
-const validate = require('./validate');
+const DOMject = require('../domject');
 const parseHTML = require('./parsehtml');
 
 function parse(str,parent){
