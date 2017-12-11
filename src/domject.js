@@ -7,7 +7,10 @@ class DOMject extends Array {
       HTML.forEach((element,index)=>{
         this[index] = element;
       });
+    } else {
+      this.element = document.createElement('div');
     }
+    this.element.className='DOMject';
   }
 };
 module.exports = DOMject;
