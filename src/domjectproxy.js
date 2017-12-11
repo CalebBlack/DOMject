@@ -1,5 +1,6 @@
 const render = require('./render');
 const parse = require('./parse');
+const arraySize = require('./functions/arraysize');
 
 const DOMjectProxy = {
   get:(target,name)=>{
@@ -7,11 +8,7 @@ const DOMjectProxy = {
     if (name === 'render') return ()=>render(target);
     if (name === 'innerHTML') return target.innerHTML;
     if (name === 'parent' && parent instanceof HTMLElement) return parent;
-    if (name === 'size') {
-      var output = 0;
-      target.forEach(element=>{if (element !== undefined && element !== null) output++});
-      return output;
-    }
+    if (name === 'size') return arraySize(target);
     return createDOMject(target[name]);
   }
   set:(target,name,HTML)=>{
