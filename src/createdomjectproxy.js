@@ -11,11 +11,11 @@ function createDOMjectProxy(){
         case('raw'): return target;
         case('render'): return ()=>render(target);
         //case('innerHTML'): return target.innerHTML;
-        case('parent'): return target.parent instanceof HTMLElement ? target.parent : createDOMject(target.parent);
+        case('parent'): return target.parent;
         case('size'): return arraySize(target);
-        default: return createDOMject(result,target[name]);
+        default: return target[name] ? createDOMject(result,target[name]) : undefined;
       }
-    }
+    },
     set:(target,name,HTML)=>{
       target[name] = parse(HTML);
       render(target[name]);
