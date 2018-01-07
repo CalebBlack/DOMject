@@ -1,8 +1,9 @@
 const render = require('./render');
 const parse = require('./html/parse');
 const arraySize = require('./functions/arraysize');
-const createDOMject = require('./createDOMject');
+const createDOMject = require('./createdomject');
 
+console.log('impo',createDOMject);
 
 function createDOMjectProxy(){
   var result = null;

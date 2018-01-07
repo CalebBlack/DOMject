@@ -9,6 +9,7 @@ function createDOMject(parent,HTML){
   let output = new Proxy(raw,proxyData[0]);
   proxyData[1](output); //Pass Outputted Proxy back to Proxy Object
   if (HTML) output.render();
+  console.log('o',output);
   return output;
 }
 module.exports = createDOMject;
